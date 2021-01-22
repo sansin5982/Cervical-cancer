@@ -1,0 +1,50 @@
+---
+title: "Cervical cancer"
+author: "Sandeep Singh"
+date: "22/01/2021"
+output: md_document
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+# INTRODUCTION
+* In the presesent study, we used genome-wide association study (GWAS) data to examine functional and regulatory effects of identified single nucleotide polymorphisms (SNP). 
+
+* Network and biology approaches will also be used to identify possible networks and pathways that may play significant role in disease etiology.
+
+* We will also examine gene-environment interactions using databases, such as comparative toxciogenomic database. 
+
+# METHODS
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(rlang)
+library(dplyr)
+library(tibble)
+library(readxl)
+library(DT)
+library(tidyr)
+library(data.table)
+library(ggplot2)
+library(ggrepel)
+library(forcats)
+library(scales)
+library(purrr) # to append multiple dataframes
+library(plotly)
+library(VennDiagram)
+library(RColorBrewer)
+library(png)
+library(grid)
+library(LDlinkR)
+library(tidyverse)
+```
+
+## Study subjects
+
+* Cervical cancer GWAS data was downloaded from NHGRI-EBI database in January 2021
+
+```{r}
+Cer_Can <- read_xlsx("C:/SANDEEP/MAIN/CAREER/My_papers/PAPERS_in_PROGRESS/Genotoxicity_and_Cancer/Cervical_cancer_NEW/Re_analysis/Cervical_Cancer_Jan_2021.xlsx")
+
+knitr::kable(Cer_Can, align = "lccrr", caption = "Cervical cancer genome-wide association study data downloaded from NHGRI-EBI database.")
+```
